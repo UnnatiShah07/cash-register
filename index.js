@@ -21,7 +21,11 @@ function validateAmount() {
             );
         }
     } else {
-        showError("Invalid Bill Amount.");
+        if (billAmount.value.match("^[A-Za-z0-9]+$")) {
+            showError("Bill Amount should only contain numbers.");
+        } else {
+            showError("Invalid Bill Amount.");
+        }
     }
 }
 
